@@ -71,11 +71,21 @@ RSpec.feature 'Basic Usage', type: :feature do
       expect(page).to have_content('Overall Rating: 4')
     end
 
-    click_link_or_button('Back to Suppliers')
+    click_link_or_button('Write a Review')
+
+    fill_in 'review[title]', with: "A horrible experience"
+    fill_in 'review[body]', with: 'My team was aweful. They had some scary comments about the Syracuse branch, though...'
+    select '2', from: 'review[overall_rating]'
+
+    click_link_or_button('Publish')
+
+    click_link_or_button('Back to Reviews')
+
+    expect(page).to have_current_path(reviews_path)
 
     aggregate_failures do
-      expect(page).to have_content('Hooli')
-      expect(page).to have_content('Dunder Mifflin')
+      expect(page).to have_content('An interesting experience')
+      expect(page).to have_content('A horrible experience')
     end
   end
 end
