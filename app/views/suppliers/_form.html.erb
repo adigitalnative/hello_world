@@ -1,0 +1,37 @@
+<%= form_with model: @supplier  do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :ein %><br>
+    <%= form.text_field :ein %>
+  </p>
+  <p>
+    <%= form.label :address_1 %><br>
+    <%= form.text_field :address_1 %>
+  </p>
+  <p>
+    <%= form.label :address_2 %><br>
+    <%= form.text_field :address_2 %>
+  </p>
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </p>
+  <p>
+    <%= form.label :state %><br>
+    <%= form.text_field :state %>
+  </p>
+  <p>
+    <%= form.label :zip_code %><br>
+    <%= form.number_field :zip_code %>
+  </p>
+  <p>
+    <%= form.label :phone_number %><br>
+    <%= form.text_field :phone_number %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
