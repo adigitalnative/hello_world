@@ -1,0 +1,12 @@
+<section class="review-container">
+  <div>
+    <h3><%= review.id %> | <%= review.title %></h3>
+    <p><%= review.body %></p>
+    <%= link_to 'View', supplier_review_path(@supplier, review)%>
+  </div>
+  <div>
+    <h3>Edit Review</h3>
+    <%= render 'reviews/form', review: review %>
+  </div>
+</section>
+<hr>
